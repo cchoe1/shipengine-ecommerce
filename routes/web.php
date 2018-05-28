@@ -11,5 +11,13 @@ $baseAdminUrl = config('avored-ecommerce.admin_url');
      ->group(function () {
 
         Route::get('dashboard', 'ShipengineViewController@getDashboard')->name('dashboard');
+
+        Route::get('config', 'ShipengineViewController@getConfig')->name('config');
+
+        //Route::resource('label', 'LabelController');
+
+        // Creating labels
+        Route::get('label/create', 'LabelController@store')->name('label.create');
+
      });
 

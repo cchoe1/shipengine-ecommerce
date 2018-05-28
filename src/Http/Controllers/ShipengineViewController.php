@@ -8,4 +8,9 @@ class ShipengineViewController extends Controller
     {
         return view('cchoe-shipengine::dashboard.dashboard');
     }
+
+    public function getConfig()
+    {
+        return 1;
+    }
 }

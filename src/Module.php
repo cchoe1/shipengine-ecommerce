@@ -18,10 +18,7 @@ class Module extends ServiceProvider
     {
         $this->registerResources();
         
-        AdminMenuFacade::add('shipengine')
-            ->label('ShipEngine')
-            ->route('admin.shipengine.dashboard');
-
+        $this->registerMenus();
     }
 
     /**
@@ -38,5 +35,27 @@ class Module extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . "/../routes/web.php");
         $this->loadViewsFrom(__DIR__ . "/../resources/views", 'cchoe-shipengine');
+    }
+
+    protected function registerMenus()
+    {
+        AdminMenuFacade::add('shipengine')
+            ->label('ShipEngine')
+            ->route('#');
+
+        $shipengine_menu = AdminMenuFacade::get('shipengine');
+
+        $dashboard_menu = new AdminMenu();
+        $dashboard_menu->key('dashboard')
+            ->label('Dashboard')
+            ->route('admin.shipengine.dashboard');
+
+        $config_menu = new AdminMenu();
+        $config_menu->key('config')
+            ->label('Configuration')
+            ->route('admin.shipengine.config');
+
+        $shipengine_menu->subMenu('dashboard', $dashboard_menu);
+        $shipengine_menu->subMenu('config', $config_menu);
     }
 }
