@@ -1,0 +1,12 @@
+{
+    "name": "cchoe/shipengine",
+    "description": "Module for ShipEngine integration",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "Calvin Choe",
+            "email": "Calvinchoe1@gmail.com"
+        }
+    ],
+    "require": {}
+}
