@@ -1,0 +1,26 @@
+{
+  "name": "shipengine",
+  "version": "1.0.0",
+  "description": "Shipengine integration",
+  "main": "index.js",
+  "scripts": {
+    “build-css”: “node-sass --include-path scss scss/app.scss public/css/main.css”,
+    “watch-css”: “nodemon -e scss -x \"npm run build-css\"”
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cchoe1/shipengine-ecommerce.git"
+  },
+  "author": "Calvin Choe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cchoe1/shipengine-ecommerce/issues"
+  },
+  "homepage": "https://github.com/cchoe1/shipengine-ecommerce#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "nodemon": "^1.17.5"
+  }
+}

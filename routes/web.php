@@ -17,7 +17,8 @@ $baseAdminUrl = config('avored-ecommerce.admin_url');
         //Route::resource('label', 'LabelController');
 
         // Creating labels
-        Route::get('label/create', 'LabelController@store')->name('label.create');
+        Route::get('label/create', 'LabelController@create')->name('label.create');
+        Route::post('label/add', 'LabelController@store');
 
      });
 
